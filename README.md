@@ -2,6 +2,7 @@
 
 > `reddit_get_top_images` is a script that can be used to download
 > all the top images from any subreddit of http://www.reddit.com.
+
 > It can be adjusted to get images from any segment of time,
 > like images from the last hour, day, or week etc.
 
