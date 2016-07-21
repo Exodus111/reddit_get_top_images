@@ -1,10 +1,31 @@
 # reddit_get_top_images
 
-> `reddit_get_top_images` is script used to download top images 
-> from any subreddit.
+> `reddit_get_top_images` is a script that can be used to download
+> all the top images from any subreddit of http://www.reddit.com.
+> It can be adjusted to get images from any segment of time,
+> like images from the last hour, day, or week etc.
+
+> The script will create a folder in your /home directory
+> called /Reddit_pics
 
 Usage
 -----
+
+**Here is a typical API usecase that will get all the top images**
+**of www.reddit.com/r/getmotived from last week.**
+```
+import get_top_images as gi
+
+tir = gi.TopImageRetreiver("getmotivated", "week")
+for url in tir.get_from_week():
+    download_it(url, args.subreddit)
+```
+
+**Here is a typical CLI usecase that will do the same:**
+
+`python get_top_images.py -s getmotivated --week`
+
+**Here are the full arguments for CLI use:**
 
 ```
 usage: get_top_images.py [-h] --subreddit SUBREDDIT [--limit LIMIT] [--hour]
@@ -26,19 +47,13 @@ optional arguments:
   --all, -a             Get top images from *all*
 ```
 
-**Download `top images from day` from any `subreddit` like this**
-
-`$python get_top_images.py -s getmotivated --day`
-
-`$python get_top_images.py -s getmotivated --all --limit 500`
-
 Contributing
 ------------
 
-Feel free to improve `reddit_get_top_images`. All kind of pull-requests are welcome.
+This project is intended as a beginner friendly collaborative code, and anyone that wants to add, extend or otherwise improve this code is free to do so. Even if they have never contributed to another repository before.
 
 LICENSE
 ------
 
-`reddit_get_top_images` is licensed under 
+`reddit_get_top_images` is licensed under
 [GPL3](LICENSE)
